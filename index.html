@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b3a4c">
+<meta name="description" content="Digital Khata – Vendor Management System (Offline PWA)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Digital Khata – Vendor Management System</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preload" href="fonts/noto-nastaliq-urdu-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== Lock / Password screen ===== -->
+<div id="lock" class="hidden">
+  <div class="lock-card">
+    <div class="logo-big" id="lockLogo"></div>
+    <h1 class="en">Digital Khata</h1>
+    <p class="en">Vendor Management System (PWA)</p>
+    <div id="lockBody"></div>
+  </div>
+</div>
+
+<!-- ===== App ===== -->
+<div id="app" class="hidden">
+  <header class="topbar">
+    <button class="ibtn menu-btn" id="menuBtn" aria-label="Menu"></button>
+    <div class="brand">
+      <div class="brand-logo" id="brandLogo"></div>
+      <div class="brand-txt"><b>Digital Khata</b><span>Vendor Management System (PWA)</span></div>
+    </div>
+    <div class="top-search" id="topSearch">
+      <span class="si" id="searchIc"></span>
+      <div class="vp" id="globalVp"></div>
+    </div>
+    <div class="top-icons">
+      <button class="lang-btn" id="langBtn" title="Language / زبان"></button>
+      <button class="ibtn cloud-btn hidden" id="cloudBtn" title="Google Drive"></button>
+      <button class="ibtn" id="searchToggle" aria-label="Search"></button>
+      <button class="ibtn" id="bellBtn" title="Pending cheques" aria-label="Notifications"></button>
+      <button class="ibtn hide-m" id="settingsBtn" title="Password Settings" aria-label="Settings"></button>
+      <button class="ibtn" id="lockBtn" title="Lock app" aria-label="Lock"></button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <nav class="nav" id="nav"></nav>
+      <div class="offline-pill" id="netPill"></div>
+    </aside>
+    <div class="drawer-bg" id="drawerBg"></div>
+    <main id="main"></main>
+  </div>
+
+  <nav class="bottom-nav" id="bottomNav"></nav>
+</div>
+
+<div id="toast"></div>
+<div id="modalRoot"></div>
+
+<script src="i18n.js"></script>
+<script src="render.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
